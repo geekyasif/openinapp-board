@@ -73,6 +73,7 @@ export default function Body() {
       const res = await axios(
         "https://raw.githubusercontent.com/geekyasif/openinapp-board/main/src/app/utils/data.json"
       );
+      console.log(res)
       setData(res.data);
     } catch (err) {
       console.log(err);
