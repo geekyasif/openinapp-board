@@ -1,0 +1,85 @@
+{
+    "metrics": [
+        {
+            "name": "Total Revenues",
+            "value": "$2,123,430",
+            "change": "+2.5%",
+            "color": "card-green"
+        },
+        {
+            "name": "Total Transactions",
+            "value": "1,520",
+            "change": "+2.5%",
+            "color": "card-yellow"
+        },
+        {
+            "name": "Total Likes",
+            "value": "9,721",
+            "change": "+2.5%",
+            "color": "card-pink"
+        },
+        {
+            "name": "Total Likes",
+            "value": "9,721",
+            "change": "+2.5%",
+            "color": "card-blue"
+        }
+    ],
+    "BarChartData": {
+        "labels": [
+            "Week 1",
+            "Week 2",
+            "Week 3",
+            "Week 4"
+        ],
+        "datasets": [
+            {
+                "label": "Guest",
+                "data": [
+                    500,
+                    350,
+                    200,
+                    400
+                ]
+            },
+            {
+                "label": "User",
+                "data": [
+                    400,
+                    450,
+                    300,
+                    350
+                ]
+            }
+        ]
+    },
+    "PieChartData": {
+        "datasets": [
+            {
+                "name": "Basic Tees",
+                "value": 55,
+                "color": "pie-green"
+            },
+            {
+                "name": "Custom Short Pants",
+                "value": 31,
+                "color": "pie-yellow"
+            },
+            {
+                "name": "Super Hoodies",
+                "value": 14,
+                "color": "pie-red"
+            }
+        ],
+        "labels": [
+            "Basic Tees",
+            "Custom Short Pants",
+            "Super Hoodies"
+        ],
+        "data": [
+            55,
+            31,
+            14
+        ]
+    }
+}

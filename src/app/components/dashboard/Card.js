@@ -1,13 +1,22 @@
 "use client";
 
-export default function Card({ bgColor, title, value, change, icon, bgLightColor }) {
-  console.log(bgColor)
+export default function Card({
+  bgColor,
+  title,
+  value,
+  change,
+  icon,
+  bgLightColor,
+}) {
   return (
     <div
       className={`p-4 w-[47%] lg:flex-grow lg:w-52 lg:h-34 lg:p-6 rounded-3xl bg-white shadow-md border-2 border-[#E0E0E0]`}
     >
       <div
-        className={`flex justify-center items-center w-8 h-8 rounded-full mb-2 bg-${bgColor}`}
+        style={{
+          backgroundColor: bgColor,
+        }}
+        className={`flex justify-center items-center w-8 h-8 rounded-full mb-2 `}
       >
         {icon}
       </div>

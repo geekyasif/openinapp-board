@@ -12,7 +12,7 @@ export default function Header({ title }) {
   const {setHandleIsModalOpen} = useModal()
 
   return (
-    <nav className="flex justify-between flex-wrap lg:px-10 lg:pt-5 px-4 pt-3 lg:sticky lg:top-0  bg-[#F8FAFF] pb-4 z-10">
+    <nav className="flex justify-between flex-wrap lg:px-10 lg:pt-5 px-4 pt-3 lg:sticky lg:top-0  bg-[#F8FAFF] pb-4">
       <h1 className="font-montserrat text-2xl font-bold">{title}</h1>
 
       {/* right  */}

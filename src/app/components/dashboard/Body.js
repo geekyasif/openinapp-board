@@ -33,6 +33,9 @@ export default function Body() {
     UserIcon,
   ]);
 
+  const cardBgColor = ["#7FCD93", "#DEBF85", "#ECA4A4", "#A9B0E5"];
+  const pieBgColor = ["#98D89E", "#F6DC7D", "#EE8484"];
+
   // fetching the use data
   const [user, setUser] = useState({
     name: "",
@@ -86,7 +89,7 @@ export default function Body() {
         {data?.metrics?.map((m, i) => (
           <Card
             key={i}
-            bgColor={m?.color}
+            bgColor={cardBgColor[i]}
             bgLightColor="bg-[#E9F9EB]"
             title={m?.name}
             value={m?.value}
@@ -121,8 +124,8 @@ export default function Body() {
               {data?.PieChartData?.datasets.map((p, id) => (
                 <PiechartLabel
                   key={id}
-                  bgColor={p?.color}
-                  text={p?.data}
+                  bgColor={pieBgColor[id]}
+                  text={p?.name}
                   percentage={p?.value}
                 />
               ))}
