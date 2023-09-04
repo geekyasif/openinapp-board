@@ -19,7 +19,7 @@ export default function AdminLayout({ children }) {
   const newPathname = capitalizeFirstLetter(oldPathname);
 
   return (
-    <div className=" bg-[#F8FAFF] lg:p-10 md:p-10 relative">
+    <div className=" bg-[#F8FAFF] lg:p-10 relative">
       <div className="flex p-2">
         <Sidebar pathname={pathname} />
         <div className="w-full">
@@ -27,7 +27,7 @@ export default function AdminLayout({ children }) {
           <div className="p-2 lg:p-8 md:p-8">{children}</div>
         </div>
       </div>
-      <div className="block sticky bottom-0 bg-gradient-to-r from-blue-500 to-blue-900 w-screen h-14 lg:hidden md:hidden">
+      <div className="block sticky bottom-0 bg-gradient-to-r from-blue-500 to-blue-900 w-screen h-14 lg:hidden">
         <div className="flex items-center justify-between p-2 h-14 ">
           <BottomNavIcon
             url="dashboard"

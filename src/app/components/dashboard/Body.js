@@ -73,7 +73,7 @@ export default function Body() {
       const res = await axios(
         "https://raw.githubusercontent.com/geekyasif/openinapp-board/main/src/app/utils/data.json"
       );
-      console.log(res)
+      console.log(res);
       setData(res.data);
     } catch (err) {
       console.log(err);
@@ -110,18 +110,18 @@ export default function Body() {
         </div>
       </div>
 
-      <div className="flex justify-between gap-10 flex-wrap mb-20 lg:mb-0">
-        <div className="lg:h-80  bg-white  rounded-3xl flex-grow lg:p-8 md:p-8 p-4 shadow-md border-2 border-[#E0E0E0]">
+      <div className="flex flex-wrap justify-center lg:justify-between gap-4 mb-20 lg:mb-0">
+        <div className="lg:w-[48%] md:w-full w-full bg-white rounded-3xl p-4 shadow-md border-2 border-[#E0E0E0] mb-4">
           <div className="flex justify-between items-center">
-            <p className=" text-lg font-bold font-montserrat">Top Products</p>
-            <Link className=" text-xs text-[#858585] font-montserrat" href="/">
+            <p className="text-lg font-bold font-montserrat">Top Products</p>
+            <Link className="text-xs text-[#858585] font-montserrat" href="/">
               May - June 2021
             </Link>
           </div>
 
           <div className="flex items-center mt-6">
             <PieChart data={data?.PieChartData} />
-            <div className="px-10">
+            <div className="lg:px-10 md:px-10 pl-3">
               {data?.PieChartData?.datasets.map((p, id) => (
                 <PiechartLabel
                   key={id}
@@ -134,12 +134,12 @@ export default function Body() {
           </div>
         </div>
 
-        <div className=" lg:h-80 bg-white rounded-3xl flex-grow lg:p-8 md:p-8 p-4 shadow-md border-2 border-[#E0E0E0]">
+        <div className="lg:w-[48%] md:w-full w-full bg-white rounded-3xl p-4 shadow-md border-2 border-[#E0E0E0] mb-4">
           {userInfo.name !== "" ||
           userInfo.email !== "" ||
           userInfo.phone !== "" ? (
             <div className="">
-              <p className=" text-sm font-semibold lg:mb-10 md:mb-10 mb-4 font-figtree">
+              <p className="text-sm font-semibold lg:mb-10 md:mb-10 mb-4 font-figtree">
                 {user.name}
               </p>
               <div className="flex flex-wrap justify-between items-center">
@@ -199,17 +199,17 @@ export default function Body() {
             </div>
           )}
         </div>
-
-        {isModalOpen && (
-          <Modal
-            isModalOpen={isModalOpen}
-            setHandleIsModalOpen={setHandleIsModalOpen}
-            user={user}
-            setHandleSetUser={setHandleSetUser}
-            handleUpdateUser={handleUpdateUser}
-          />
-        )}
       </div>
+
+      {isModalOpen && (
+        <Modal
+          isModalOpen={isModalOpen}
+          setHandleIsModalOpen={setHandleIsModalOpen}
+          user={user}
+          setHandleSetUser={setHandleSetUser}
+          handleUpdateUser={handleUpdateUser}
+        />
+      )}
     </div>
   );
 }

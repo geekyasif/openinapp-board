@@ -11,7 +11,7 @@ import Link from "next/link";
 
 export default function Sidebar({ pathname }) {
   return (
-    <div className=" hidden lg:block md:block bg-gradient-to-r from-blue-500 to-blue-900  rounded-3xl  pl-12  pt-16 sticky top-0 h-screen w-72 ">
+    <div className=" hidden lg:block bg-gradient-to-r from-blue-500 to-blue-900  rounded-3xl  pl-12  pt-16 sticky top-0 h-screen w-72 ">
       <h1 className="text-white font-montserrat font-bold text-3xl pb-16">
         Board.
       </h1>
