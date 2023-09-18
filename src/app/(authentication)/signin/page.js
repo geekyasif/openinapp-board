@@ -9,6 +9,7 @@ import { GitubIcon, GoogleIcon } from "@/app/utils/socialSvgIcons";
 import TextInput from "@/app/components/authentication/TextInput";
 import HandleAuthButton from "@/app/components/authentication/HandleAuthButton";
 import { Rings } from "react-loader-spinner";
+import { useEffect } from "react";
 
 export default function SigninPage() {
   const router = useRouter();
@@ -31,9 +32,11 @@ export default function SigninPage() {
     );
   }
 
-  if (status === "authenticated") {
-    return router.push("/dashboard");
-  }
+  useEffect(() => {
+    if (status === "authenticated") {
+      return router.push("/dashboard");
+    }
+  }, []);
 
   return (
     <div className="p-4 lg:p-0 lg:flex-grow lg:flex lg:flex-col lg:justify-center lg:items-center">

@@ -8,13 +8,19 @@ const handler = NextAuth({
   providers: [
     GoogleProvider({
       clientId: process.env.GOOGLE_CLIENT_ID,
-      clientSecret: process.env.GOOGLE_CLIENT_SECRET
+      clientSecret: process.env.GOOGLE_CLIENT_SECRET,
     }),
     GitHubProvider({
       clientId: process.env.GITHUB_ID,
       clientSecret: process.env.GITHUB_SECRET
     }),
-  ]
+  ],
+  callbacks: {
+    async signIn(profile){
+      console.log(profile)
+      return true
+    }
+  }
 });
 
 export { handler as GET, handler as POST }
