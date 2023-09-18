@@ -22,6 +22,7 @@ import Modal from "./Modal";
 import useModal from "@/app/hooks/useModal";
 import PiechartLabel from "./PiechatLabel";
 import axios from "axios";
+import jsonData from "../.././utils/data.json";
 
 export default function Body() {
   const { isModalOpen, setHandleIsModalOpen } = useModal();
@@ -68,13 +69,13 @@ export default function Body() {
     setHandleIsModalOpen();
   };
 
-  const fetchData = async () => {
+  const fetchData = () => {
     try {
-      const res = await axios(
-        "https://raw.githubusercontent.com/geekyasif/openinapp-board/main/src/app/utils/data.json"
-      );
-      console.log(res);
-      setData(res.data);
+      // const res = await axios(
+      //   "https://raw.githubusercontent.com/geekyasif/openinapp-board/main/src/app/utils/data.json"
+      // );
+      const res = jsonData;
+      setData(res);
     } catch (err) {
       console.log(err);
     }

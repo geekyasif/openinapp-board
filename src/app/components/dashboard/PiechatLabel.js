@@ -1,7 +1,7 @@
 "use client";
 
 export default function PiechartLabel({ bgColor, text, percentage }) {
-  console.log(bgColor)
+
   return (
     <div className="mb-4 ">
       <p className=" text-sm font-bold font-montserrat flex items-center mb-2">
