@@ -19,6 +19,7 @@ export default function Modal({
         <div className="flex justify-between py-4 px-6 border-b-2">
           <p>Add New Profile</p>
           <button
+            className=""
             onClick={() => {
               if (
                 user?.name === "" ||
@@ -106,17 +107,17 @@ export default function Modal({
             />
           </div>
         )}
-        <div className="flex justify-end items-center px-6 pb-4 ">
+        <div className="flex justify-end items-center px-6 pb-4 gap-2">
           {activeTab === "social" && (
             <>
               <button
-                className=" border-2 border-[#999CA0] px-4 py-2  text-black rounded-xl text-sm font-semibold font-figtree  w-16 h-10"
+                className=" border-2 border-[#999CA0] text-black rounded-lg text-sm font-semibold font-figtree  w-16 h-10"
                 onClick={() => setHandleModalActiveTab("basic")}
               >
                 Back{" "}
               </button>
               <button
-                className=" ml-2  px-4 py-2 bg-blue-500 text-white rounded-xl text-smfont-semibold font-figtree  w-16 h-10"
+                className=" bg-blue-500 text-white rounded-lg text-smfont-semibold font-figtree  w-16 h-10"
                 onClick={() => {
                   if (
                     user?.name === "" ||
@@ -136,7 +137,7 @@ export default function Modal({
           )}
           {activeTab === "basic" && (
             <button
-              className=" ml-2  px-4 py-2 bg-blue-500 text-white rounded-xl text-sm text-center font-semibold font-figtree w-16 h-10"
+              className="  bg-blue-500 text-white rounded-lg text-sm text-center font-semibold font-figtree w-16 h-10"
               onClick={() => {
                 if (
                   user?.name === "" ||
