@@ -15,7 +15,8 @@ export default function DashboardPage() {
   }
 
   if (status === "unauthenticated") {
-    return router.push("/signin");
+    router.replace("/signin");
+    return null;
   }
 
   return <Body />;

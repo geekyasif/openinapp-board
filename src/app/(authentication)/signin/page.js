@@ -32,11 +32,14 @@ export default function SigninPage() {
     );
   }
 
-  useEffect(() => {
-    if (status === "authenticated") {
-      return router.push("/dashboard");
+  if (status === "authenticated") {
+    try {
+      router.push("/dashboard");
+      return null;
+    } catch (error) {
+      console.log(error);
     }
-  }, []);
+  }
 
   return (
     <div className="p-4 lg:p-0 lg:flex-grow lg:flex lg:flex-col lg:justify-center lg:items-center">
