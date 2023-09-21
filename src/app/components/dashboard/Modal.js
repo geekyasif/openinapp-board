@@ -27,7 +27,7 @@ export default function Modal({
               ) {
                 alert("All fields are required!");
               } else {
-                setHandleModalActiveTab("social");
+                setHandleIsModalOpen();
               }
             }}
           >
