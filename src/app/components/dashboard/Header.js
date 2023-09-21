@@ -4,12 +4,12 @@ import Image from "next/image";
 import profile from "../../../../public/pro.png";
 import { signOut, useSession } from "next-auth/react";
 import useMenu from "@/app/hooks/useMenu";
-import useModal from "@/app/hooks/useModal";
+import { useModal } from "@/app/context/ModalProvider";
 
 export default function Header({ title }) {
   const { data: session } = useSession();
   const { isMenuVisible, setHandleMenu } = useMenu();
-  const {setHandleIsModalOpen} = useModal()
+  const { isModalOpen, handleModal } = useModal();
 
   return (
     <nav className="flex justify-between flex-wrap lg:px-10 lg:pt-5 px-4 pt-3 lg:sticky lg:top-0  bg-[#F8FAFF] pb-4">
@@ -74,7 +74,7 @@ export default function Header({ title }) {
               <div className="absolute bg-white rounded-lg w-48 flex flex-col items-start right-0 top-10 shadow z-10">
                 <button
                   className="border-b hover:bg-gray-100  rounded-t-lg py-3 px-2 w-full text-sm font-lato text-start"
-                  onClick={setHandleIsModalOpen}
+                  onClick={handleModal}
                 >
                   Update Profile
                 </button>

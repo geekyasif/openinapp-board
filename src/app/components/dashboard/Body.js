@@ -17,15 +17,15 @@ import {
 } from "@/app/utils/socialSvgIcons";
 import UserInfoText from "./UserInfoText";
 import whatsappIcon from "../../../../public/wa.png";
-import { useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import Modal from "./Modal";
-import useModal from "@/app/hooks/useModal";
 import PiechartLabel from "./PiechatLabel";
 import axios from "axios";
 import jsonData from "../.././utils/data.json";
+import { useModal } from "@/app/context/ModalProvider";
 
 export default function Body() {
-  const { isModalOpen, setHandleIsModalOpen } = useModal();
+  const { isModalOpen, handleModal } = useModal();
   const [data, setData] = useState({});
   const [icons, setIcons] = useState([
     RevenueIcon,
@@ -56,17 +56,17 @@ export default function Body() {
 
   // displaying the into the userinfo card section
   const [userInfo, setUserInfo] = useState({
-    name: user.name,
-    email: user.email,
-    phone: user.phone,
-    instagram: user.instagram,
-    youtube: user.youtube,
+    name: user?.name,
+    email: user?.email,
+    phone: user?.phone,
+    instagram: user?.instagram,
+    youtube: user?.youtube,
   });
 
   // updating the usercard
   const handleUpdateUser = () => {
     setUserInfo(user);
-    setHandleIsModalOpen();
+    handleModal();
   };
 
   const fetchData = () => {
@@ -136,23 +136,23 @@ export default function Body() {
         </div>
 
         <div className="lg:w-[48%] md:w-full w-full bg-white rounded-3xl p-4 shadow-md border-2 border-[#E0E0E0] mb-4">
-          {userInfo.name !== "" ||
-          userInfo.email !== "" ||
-          userInfo.phone !== "" ? (
+          {userInfo?.name !== "" ||
+          userInfo?.email !== "" ||
+          userInfo?.phone !== "" ? (
             <div className="">
               <p className="text-sm font-semibold lg:mb-10 md:mb-10 mb-4 font-figtree">
-                {user.name}
+                {user?.name}
               </p>
               <div className="flex flex-wrap justify-between items-center">
                 <div className="w-[40%]">
                   <UserInfoText
-                    text={userInfo.phone}
+                    text={userInfo?.phone}
                     userInfoSocailBgColor="bg-[#E9F9EB]"
                     iconUrl={whatsappIcon}
                   />
 
                   <UserInfoText
-                    text={userInfo.email}
+                    text={userInfo?.email}
                     userInfoSocailBgColor="bg-[#EBE6F9]"
                     icon={emailIcon}
                   />
@@ -160,13 +160,13 @@ export default function Body() {
 
                 <div className="w-[40%]">
                   <UserInfoText
-                    text={userInfo.instagram}
+                    text={userInfo?.instagram}
                     userInfoSocailBgColor="bg-[#FFE9EC]"
                     icon={instagramIcon}
                   />
 
                   <UserInfoText
-                    text={userInfo.youtube}
+                    text={userInfo?.youtube}
                     userInfoSocailBgColor="bg-[#FFE9E9]"
                     icon={youtubeIcon}
                   />
@@ -176,7 +176,7 @@ export default function Body() {
           ) : (
             <div
               className="flex flex-col justify-center items-center h-full cursor-pointer"
-              onClick={setHandleIsModalOpen}
+              onClick={handleModal}
             >
               <div className="roundend-full bg-[#F2F2F2] w-20 h-20 flex justify-center items-center rounded-full mb-4">
                 <svg
@@ -205,7 +205,7 @@ export default function Body() {
       {isModalOpen && (
         <Modal
           isModalOpen={isModalOpen}
-          setHandleIsModalOpen={setHandleIsModalOpen}
+          setHandleIsModalOpen={handleModal}
           user={user}
           setHandleSetUser={setHandleSetUser}
           handleUpdateUser={handleUpdateUser}

@@ -14,13 +14,17 @@ export default function Modal({
 
   return (
     <div className="fixed inset-0 flex items-center justify-center ">
-      <div class="fixed inset-0 bg-black opacity-50"></div>
+      <div className="fixed inset-0 bg-black opacity-50"></div>
       <div className=" bg-white rounded-xl lg:w-[554px] md:w-[554px] w-full shadow-md  z-50 mx-2 lg:mx-0 md:mx-0">
         <div className="flex justify-between py-4 px-6 border-b-2">
           <p>Add New Profile</p>
           <button
             onClick={() => {
-              if (user.name === "" || user.email === "" || user.phone === "") {
+              if (
+                user?.name === "" ||
+                user?.email === "" ||
+                user?.phone === ""
+              ) {
                 alert("All fields are required!");
               } else {
                 setHandleModalActiveTab("social");
@@ -57,7 +61,7 @@ export default function Modal({
               labelText="Enter Name"
               typeText="text"
               placeholerText="Eg. John Doe"
-              userInfo={user.name}
+              userInfo={user?.name}
               handleInputChange={setHandleSetUser}
             />
 
@@ -66,7 +70,7 @@ export default function Modal({
               labelText="Enter Email"
               typeText="email"
               placeholerText="Eg. John@google.com"
-              userInfo={user.email}
+              userInfo={user?.email}
               handleInputChange={setHandleSetUser}
             />
 
@@ -75,7 +79,7 @@ export default function Modal({
               labelText="Enter Phone"
               typeText="phone"
               placeholerText="Eg. 9161908716"
-              userInfo={user.phone}
+              userInfo={user?.phone}
               handleInputChange={setHandleSetUser}
             />
           </div>
@@ -88,7 +92,7 @@ export default function Modal({
               labelText="Instagram Link (Optional)"
               typeText="text"
               placeholerText="Eg. ..instagram.com/username"
-              userInfo={user.instagram}
+              userInfo={user?.instagram}
               handleInputChange={setHandleSetUser}
             />
 
@@ -97,7 +101,7 @@ export default function Modal({
               labelText="Youtube Link (Optional)"
               typeText="text"
               placeholerText="Eg. ..youtube.com/username"
-              userInfo={user.youtube}
+              userInfo={user?.youtube}
               handleInputChange={setHandleSetUser}
             />
           </div>
@@ -115,9 +119,9 @@ export default function Modal({
                 className=" ml-2  px-4 py-2 bg-blue-500 text-white rounded-xl text-smfont-semibold font-figtree  w-16 h-10"
                 onClick={() => {
                   if (
-                    user.name === "" ||
-                    user.email === "" ||
-                    user.phone === ""
+                    user?.name === "" ||
+                    user?.email === "" ||
+                    user?.phone === ""
                   ) {
                     alert("All fields are required!");
                   } else {
@@ -135,9 +139,9 @@ export default function Modal({
               className=" ml-2  px-4 py-2 bg-blue-500 text-white rounded-xl text-sm text-center font-semibold font-figtree w-16 h-10"
               onClick={() => {
                 if (
-                  user.name === "" ||
-                  user.email === "" ||
-                  user.phone === ""
+                  user?.name === "" ||
+                  user?.email === "" ||
+                  user?.phone === ""
                 ) {
                   alert("All fields are required!");
                 } else {
